@@ -1,0 +1,26 @@
+[
+  {
+    "model": "products.category",
+    "pk": 1,
+    "fields": {
+      "name": "Традиционный",
+      "slug": "traditional"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "name": "Квас классический",
+      "slug": "classic",
+      "category": 1,
+      "price": 150.00,
+      "volume": 1.0,
+      "color": "light",
+      "sweetness": "semi_sweet",
+      "in_stock": true,
+      "created_at": "2025-05-01T00:00:00Z",
+        "updated_at": "2025-05-01T00:00:00Z"
+    }
+  }
+]
