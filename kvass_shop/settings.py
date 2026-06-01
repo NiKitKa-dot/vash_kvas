@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'products',
     'users',
     'orders',
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -150,5 +151,12 @@ REST_FRAMEWORK = {
         'django_filters.rest_framework.DjangoFilterBackend',
     ),
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 8,
+    'PAGE_SIZE': 4,
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Vash-Kvas API',
+    'DESCRIPTION': 'API интернет-магазина кваса с JWT-аутентификацией',
+    'VERSION': '1.0.0',
 }

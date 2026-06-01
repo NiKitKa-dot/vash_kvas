@@ -5,6 +5,8 @@ from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
 from products.views import SellerProductViewSet
 from users.views import OwnerStatsView
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
+
 
 router = DefaultRouter()
 router.register(r'seller/products', SellerProductViewSet, basename='seller-products')
@@ -16,6 +18,8 @@ urlpatterns = [
     path('api/auth/', include('users.urls')),
     path('api/', include(router.urls)),
     path('api/owner/stats/', OwnerStatsView.as_view(), name='owner-stats'),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
 ]
 
 if settings.DEBUG:
