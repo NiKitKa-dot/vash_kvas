@@ -16,10 +16,13 @@ class ProductSerializer(serializers.ModelSerializer):
 class ProductCreateUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product
-        fields = ['id', 'name', 'price', 'volume', 'color', 'sweetness', 'in_stock', 'description', 'image', 'old_price']
+        fields = ['id', 'name', 'price', 'volume', 'color', 'sweetness', 
+                  'in_stock', 'description', 'image', 'old_price']
+        read_only_fields = ['id', 'slug']  
         extra_kwargs = {
-            'category': {'required': False},  # необязательное поле
+            'category': {'required': False},
         }
+
 class ProductSellerListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product

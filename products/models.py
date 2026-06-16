@@ -12,6 +12,8 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
+
 class Product(models.Model):
     COLOR_CHOICES = [
         ('light', 'Светлый'),
@@ -63,3 +65,4 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+ 

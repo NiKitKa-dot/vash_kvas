@@ -1,26 +1,25 @@
-from rest_framework import viewsets, filters, permissions, views
+from rest_framework import viewsets, filters, permissions
+from rest_framework.decorators import action
+from rest_framework.response import Response
 from django_filters.rest_framework import DjangoFilterBackend, FilterSet
 from django_filters import NumberFilter, CharFilter
 from .models import Product, Category
-from .serializers import ProductSerializer
-from rest_framework.decorators import action
-from rest_framework.response import Response
-from .serializers import ProductCreateUpdateSerializer, ProductSellerListSerializer, CategorySerializer
+from .serializers import ProductSerializer, ProductCreateUpdateSerializer, ProductSellerListSerializer, CategorySerializer
 import random
+from rest_framework.pagination import PageNumberPagination
+
+class NoPagination(PageNumberPagination):
+    page_size = 1000  # достаточно большое число, чтобы вместить все товары
 
 
 class CategoryViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Category.objects.all()
     serializer_class = CategorySerializer
-    permission_classes = [permissions.AllowAny]   # обязательно список!
-
+    permission_classes = [permissions.AllowAny]
 
 class ProductFilter(FilterSet):
-    # Фильтр по нескольким значениям объема (lookup_expr='in')
     volume__in = CharFilter(method='filter_volume_in')
-    # Фильтр по нескольким цветам
     color__in = CharFilter(method='filter_color_in')
-    # Фильтр по максимальной цене
     price__lte = NumberFilter(field_name='price', lookup_expr='lte')
 
     class Meta:
@@ -28,9 +27,7 @@ class ProductFilter(FilterSet):
         fields = ['color', 'sweetness', 'volume']
 
     def filter_volume_in(self, queryset, name, value):
-        # value приходит как строка "0.5,1,2"
         volumes = value.split(',')
-        # Преобразуем в числа (так как volume DecimalField)
         try:
             volumes_float = [float(v) for v in volumes]
         except ValueError:
@@ -46,7 +43,7 @@ class ProductViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = ProductSerializer
     permission_classes = [permissions.AllowAny]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
-    filterset_class = ProductFilter  # используем кастомный фильтр
+    filterset_class = ProductFilter
     search_fields = ['name', 'description']
     ordering_fields = ['price', 'created_at', 'name']
 
@@ -55,7 +52,8 @@ class IsSeller(permissions.BasePermission):
         return request.user.is_authenticated and request.user.profile.role == 'seller'
 
 class SellerProductViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsSeller]   # список!
+    pagination_class = NoPagination
+    permission_classes = [IsSeller]
     serializer_class = ProductCreateUpdateSerializer
 
     def get_queryset(self):
@@ -78,7 +76,6 @@ class SellerProductViewSet(viewsets.ModelViewSet):
             data.append({
                 'product_id': p.id,
                 'product_name': p.name,
-                'sales_count': random.randint(1, 500)   # случайное число продаж
+                'sales_count': random.randint(1, 500)
             })
         return Response(data)
-

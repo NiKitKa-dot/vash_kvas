@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+from datetime import timedelta
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -50,7 +51,6 @@ INSTALLED_APPS = [
     'products',
     'users',
     'orders',
-    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -159,4 +159,12 @@ SPECTACULAR_SETTINGS = {
     'TITLE': 'Vash-Kvas API',
     'DESCRIPTION': 'API интернет-магазина кваса с JWT-аутентификацией',
     'VERSION': '1.0.0',
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(days=1),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'AUTH_HEADER_TYPES': ('Bearer',),
 }
