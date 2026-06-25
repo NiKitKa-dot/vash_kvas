@@ -1,0 +1,123 @@
+/* RegisterPage.css */
+.register-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff5e6 0%, #ffffff 100%);
+  padding: 20px;
+}
+
+.register-container {
+  max-width: 480px;
+  width: 100%;
+  background: white;
+  border-radius: 32px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 40px 32px;
+  transition: all 0.3s ease;
+}
+
+.register-container h2 {
+  text-align: center;
+  color: #ff8c00;
+  margin-bottom: 32px;
+  font-size: 2rem;
+}
+
+.register-form .form-group {
+  margin-bottom: 24px;
+}
+
+.register-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.register-form input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1rem;
+  border: 2px solid #ffe0cc;
+  border-radius: 48px;
+  outline: none;
+  transition: border 0.2s;
+  background: #fff;
+}
+
+.register-form input:focus {
+  border-color: #ff8c00;
+  box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.1);
+}
+
+.error-message {
+  background: #ffe6e6;
+  color: #cc3300;
+  padding: 12px;
+  border-radius: 48px;
+  text-align: center;
+  margin: 16px 0;
+  font-size: 0.9rem;
+}
+
+.rules {
+  background: #fff5e6;
+  padding: 16px 18px;
+  border-radius: 24px;
+  margin: 20px 0;
+}
+
+.rules small {
+  font-weight: bold;
+  color: #ff8c00;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.rules ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #555;
+  font-size: 0.85rem;
+}
+
+.rules li {
+  margin: 6px 0;
+}
+
+.register-btn {
+  width: 100%;
+  background: #ff8c00;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 48px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+
+.register-btn:hover {
+  background: #e67300;
+}
+
+.login-link {
+  text-align: center;
+  margin-top: 24px;
+  color: #666;
+}
+
+.login-link a {
+  color: #ff8c00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.login-link a:hover {
+  text-decoration: underline;
+}

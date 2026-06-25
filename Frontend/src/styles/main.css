@@ -1,0 +1,53 @@
+:root {
+  --primary: #ff8c00;        /* основной оранжевый */
+  --primary-light: #ffb347;   /* светлый оранжевый */
+  --primary-extra-light: #fff5e6; /* очень светлый (для фонов) */
+  --primary-dark: #e67300;     /* тёмный оранжевый */
+  --white: #ffffff;
+  --gray-light: #f8f9fa;
+  --gray: #6c757d;
+  --text-dark: #212529;
+}
+
+body {
+  background-color: var(--white);
+  color: var(--text-dark);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Кнопки */
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Ссылки */
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5 {
+  color: var(--text-dark);
+}

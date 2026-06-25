@@ -1,0 +1,163 @@
+.seller-products-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.seller-products-page h1 {
+  font-size: 1.8rem;
+  color: #ff8c00;
+  border-left: 4px solid #ff8c00;
+  padding-left: 15px;
+  margin-bottom: 25px;
+}
+
+/* Форма добавления / редактирования товара */
+.product-form {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 24px;
+  margin-bottom: 30px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+  align-items: flex-end;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  flex: 1;
+  min-width: 150px;
+  padding: 10px 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 48px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: none;
+  border-color: #ff8c00;
+  box-shadow: 0 0 0 2px rgba(255, 140, 0, 0.1);
+}
+
+textarea {
+  width: 100%;
+  border-radius: 20px !important;
+  resize: vertical;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.form-buttons button {
+  background: #ff8c00;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 48px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form-buttons button:hover {
+  background: #e67300;
+}
+
+.form-buttons button:last-child {
+  background: #6c757d;
+}
+
+.form-buttons button:last-child:hover {
+  background: #5a6268;
+}
+
+/* Список товаров продавца */
+.products-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.seller-product-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff5e6;
+  border-radius: 16px;
+  padding: 12px 20px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.seller-product-card:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.product-info {
+  font-size: 1rem;
+}
+
+.product-info strong {
+  color: #333;
+  font-size: 1.05rem;
+}
+
+.product-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.product-actions button {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 30px;
+  transition: background 0.2s;
+}
+
+.product-actions button:first-child {
+  color: #ff8c00;
+}
+.product-actions button:first-child:hover {
+  background: #ffe6cc;
+}
+
+.product-actions button:last-child {
+  color: #dc3545;
+}
+.product-actions button:last-child:hover {
+  background: #ffe6e6;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    flex-direction: column;
+  }
+  .form-row input,
+  .form-row select {
+    width: 100%;
+  }
+  .seller-product-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .product-actions {
+    align-self: flex-end;
+  }
+}

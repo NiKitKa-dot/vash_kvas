@@ -1,0 +1,14 @@
+.favorites-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.favorites-page h2 {
+  color: #ff8c00;
+  margin-bottom: 20px;
+}
+.favorites-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}

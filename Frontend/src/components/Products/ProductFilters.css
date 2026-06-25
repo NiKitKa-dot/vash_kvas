@@ -1,0 +1,77 @@
+.filters-panel {
+  width: 100%;
+}
+
+.filters-two-columns {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.filters-left, .filters-right {
+  flex: 1;
+  min-width: 180px;
+}
+
+.filter-section {
+  margin-bottom: 24px;
+}
+
+.filter-section h4 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 6px;
+}
+
+.filter-checkbox {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.filter-checkbox input {
+  margin-right: 8px;
+}
+
+select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+}
+
+.price-range {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.clear-filters {
+  width: 100%;
+  padding: 8px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+.clear-filters:hover {
+  background: #ff8c00;
+  color: white;
+  border-color: #ff8c00;
+}
+
+.product-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}

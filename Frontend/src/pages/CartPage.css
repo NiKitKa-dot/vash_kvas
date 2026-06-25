@@ -1,0 +1,78 @@
+/* CatalogPage.css */
+.catalog-page {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: #fff;
+}
+
+/* Переопределяем глобальный контейнер для каталога */
+.catalog-page .container {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.catalog-header {
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.catalog-header h2 {
+  font-size: 1.8rem;
+  color: #333;
+  border-left: 4px solid #ff8c00;
+  padding-left: 15px;
+}
+
+/* Две колонки без отступов слева */
+.catalog-content {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Фильтры прижаты к левому краю */
+.filters-sidebar {
+  flex: 0 0 280px;
+  background: white;
+  border-radius: 0 16px 16px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  padding: 20px 16px;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+  margin-left: 0;
+}
+
+/* Карточки занимают всё оставшееся пространство */
+.products-main {
+  flex: 1;
+  min-width: 0;
+  padding-right: 20px;
+}
+
+/* Сетка карточек */
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  .catalog-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .filters-sidebar {
+    position: static;
+    width: 100%;
+    flex: auto;
+    border-radius: 16px;
+  }
+  .products-main {
+    padding-right: 0;
+  }
+}
