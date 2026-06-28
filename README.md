@@ -13,27 +13,48 @@
 ### Бэкенд
 
 cd kvass_shop
+
 python -m venv venv
+
 source venv/bin/activate  # или venv\Scripts\activate
+
 pip install -r requirements.txt
+
 python manage.py migrate
+
 python manage.py createsuperuser
+
 python manage.py runserver
 
 ### Фронтенд
 
 cd frontend
+
 npm install
+
 npm run dev
 
 
-После запуска сайт доступен по адресу http://localhost:5173
+После запуска:
 
-API – http://localhost:8000/api/
+- сайт доступен по адресу http://localhost:5173
 
-документация Swagger – http://localhost:8000/api/docs/
+- API – http://localhost:8000/api/
+
+- документация Swagger – http://localhost:8000/api/docs/
 
 ## График активности
 <img width="454" height="220" alt="image" src="https://github.com/user-attachments/assets/61b8f8f5-63e8-4c43-a17d-80f04f123a06" />
 
 ## Тепловая карта
+
+<img width="777" height="233" alt="image" src="https://github.com/user-attachments/assets/772ecc22-496f-4c00-aebc-829ea89f9387" />
+
+
+## Статистика разработки
+
+Всего коммитов: 47
+
+Период: 01.04.2026 – 10.06.2026
+
+Средняя частота: 2.9 коммита/неделю
