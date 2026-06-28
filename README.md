@@ -11,7 +11,7 @@
 ## Установка и запуск
 
 ### Бэкенд
-```bash
+
 cd kvass_shop
 python -m venv venv
 source venv/bin/activate  # или venv\Scripts\activate
@@ -21,7 +21,7 @@ python manage.py createsuperuser
 python manage.py runserver
 
 ### Фронтенд
-```bash
+
 cd frontend
 npm install
 npm run dev
@@ -33,3 +33,7 @@ API – http://localhost:8000/api/
 
 документация Swagger – http://localhost:8000/api/docs/
 
+## График активности
+<img width="454" height="220" alt="image" src="https://github.com/user-attachments/assets/61b8f8f5-63e8-4c43-a17d-80f04f123a06" />
+
+## Тепловая карта
