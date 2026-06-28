@@ -19,3 +19,16 @@ pip install -r requirements.txt
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
+
+### Фронтенд
+```bash
+cd frontend
+npm install
+npm run dev
+
+После запуска сайт доступен по адресу http://localhost:5173
+
+API – http://localhost:8000/api/
+
+документация Swagger – http://localhost:8000/api/docs/
+
