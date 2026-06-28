@@ -26,6 +26,7 @@ cd frontend
 npm install
 npm run dev
 
+
 После запуска сайт доступен по адресу http://localhost:5173
 
 API – http://localhost:8000/api/
